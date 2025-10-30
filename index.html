@@ -5,11 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             color: red;
             background-color: black;
             font-size: 30px;
+            /* Optional: Hide scrollbar during the animation if content overflows */
+            overflow: hidden; 
         }
+
+        /* --- Fade-In Animation Keyframes --- */
+        @keyframes fadeIn {
+            /* Start state: Opacity 0 (transparent) and slightly moved up */
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            /* End state: Opacity 1 (fully visible) and back to its original position */
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Style for the Title --- */
+        h1 {
+            /* Apply the animation */
+            animation: fadeIn 2s ease-out forwards;
+            
+            /* Start invisible to avoid a flash before the animation begins */
+            opacity: 0; 
+        }
+
     </style>
 </head>
 <body>
